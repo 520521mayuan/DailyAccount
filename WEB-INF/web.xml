@@ -8,21 +8,11 @@
 A application for Servlet1. 
 </description> 
 <servlet> 
-<servlet-name>UserServlet</servlet-name> 
-<display-name>UserServlet</display-name> 
-<description>A Servlet1 Servlet</description> 
-<servlet-class>Servlet1.UserServlet</servlet-class> 
-</servlet> 
-<servlet> 
 <servlet-name>zengjia</servlet-name> 
 <display-name>zengjia</display-name> 
 <description>zengjia xue sheng xinxi</description> 
 <servlet-class>Zengjia.zengjia</servlet-class> 
 </servlet> 
-<servlet-mapping> 
-<servlet-name>UserServlet</servlet-name> 
-<url-pattern>/UserServlet</url-pattern> 
-</servlet-mapping> 
 <servlet-mapping> 
 <servlet-name>zengjia</servlet-name> 
 <url-pattern>/zengjia</url-pattern> 
