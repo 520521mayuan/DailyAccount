@@ -14,7 +14,7 @@
         var="myDS"
         driver="com.mysql.jdbc.Driver"
         url="jdbc:mysql://localhost:3306/monthconsume"
-        user="root" password="sqllife"
+        user="root" password="root"
    />
      
     <sql:query var="listUsers" dataSource="${myDS}">

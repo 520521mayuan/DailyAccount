@@ -9,7 +9,7 @@ String driverName="com.mysql.jdbc.Driver";
 //数据库用户名
 String userName="root";
 //密码
-String userPasswd="sqllife";
+String userPasswd="root";
 //数据库名
 String dbName="monthconsume";
 //表名
@@ -31,7 +31,6 @@ ResultSetMetaData rmeta = rs.getMetaData();
 // 输出每一个数据值
 while(rs.next()) {
 	String id =rs.getString("money2now");
-	out.print(id); 
 	//	out.print("<br>");
 } 
 //out.print("<br>");
