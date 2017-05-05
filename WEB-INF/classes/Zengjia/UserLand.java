@@ -18,7 +18,7 @@ public class UserLand {
             statement = connection.prepareStatement(sql);
             resultSet = statement.executeQuery();
             while (resultSet.next()) {
-                if (user.getxuehao().equals(resultSet.getString("xuehao"))) {
+                if (user.getDateTimes().equals(resultSet.getString("DateTimes"))) {
                     flag=true;
                 }
             }

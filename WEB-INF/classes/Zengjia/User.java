@@ -3,27 +3,27 @@ package Zengjia;
     
 public class User {     
     //private Integer uid;     
-    private String xuehao;     
-    private String xingming;     
-    private String zhuanye;     
+    private String DateTimes;     
+    private String Goods;     
+    private String Sums;     
     private String nianji;     
 
-    public String getxuehao(){     
-        return xuehao;     
+    public String getDateTimes(){     
+        return DateTimes;     
     }     
-    public void setxuehao(String xuehao){     
-        this.xuehao=xuehao;     
+    public void setDateTimes(String DateTimes){     
+        this.DateTimes=DateTimes;     
     }     
-    public String getxingming(){     
-        return xingming;     
+    public String getGoods(){     
+        return Goods;     
     }     
-    public void setxingming(String xingming){     
-        this.xingming=xingming;    
+    public void setGoods(String Goods){     
+        this.Goods=Goods;    
     }     
-    public String getzhuanye(){     
-        return zhuanye;     
+    public String getSums(){     
+        return Sums;     
     }     
-    public void setzhuanye(String zhuanye){     
-        this.zhuanye=zhuanye;    
+    public void setSums(String Sums){     
+        this.Sums=Sums;    
     }     
 }    

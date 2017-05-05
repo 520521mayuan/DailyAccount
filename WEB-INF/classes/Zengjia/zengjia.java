@@ -19,13 +19,13 @@ public class zengjia extends HttpServlet {
 	String submit1=request.getParameter("submit1");     
 
 	if(submit!=null&&submit.equals("提交餐饮记录")){     
-	    String xuehao=request.getParameter("xuehao");     
-	    String xingming=request.getParameter("xingming");     
-	    String zhuanye=request.getParameter("zhuanye");     
+	    String DateTimes=request.getParameter("DateTimes");     
+	    String Goods=request.getParameter("Goods");     
+	    String Sums=request.getParameter("Sums");     
 	    User user=new User();     
-	    user.setxuehao(xuehao);     
-	    user.setxingming(xingming);     
-	    user.setzhuanye(zhuanye);     
+	    user.setDateTimes(DateTimes);     
+	    user.setGoods(Goods);     
+	    user.setSums(Sums);     
 	    if(Land.login(user)){     
 		HttpSession session=request.getSession(true);     
 		session.setAttribute("user",user);     
@@ -39,13 +39,13 @@ public class zengjia extends HttpServlet {
 	    }     
 	}     
 	else if(submit1!=null&&submit1.equals("提交日常用品记录")){     
-	    String xuehao=request.getParameter("xuehao");     
-	    String xingming=request.getParameter("xingming");     
-	    String zhuanye=request.getParameter("zhuanye");     
+	    String DateTimes=request.getParameter("DateTimes");     
+	    String Goods=request.getParameter("Goods");     
+	    String Sums=request.getParameter("Sums");     
 	    User user=new User();     
-	    user.setxuehao(xuehao);     
-	    user.setxingming(xingming);     
-	    user.setzhuanye(zhuanye);     
+	    user.setDateTimes(DateTimes);     
+	    user.setGoods(Goods);     
+	    user.setSums(Sums);     
 	    if(Land.login(user)){     
 		HttpSession session=request.getSession(true);     
 		session.setAttribute("user",user);     

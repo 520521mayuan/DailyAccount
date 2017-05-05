@@ -17,9 +17,9 @@
 <script>
 	function validate(){
 		x=document.AddRecord
-		input1=x.xuehao.value
-		input2=x.xingming.value
-		input3=x.zhuanye.value
+		input1=x.DateTimes.value
+		input2=x.Goods.value
+		input3=x.Sums.value
 		var matches = /^(\d{4})-(\d{2})-(\d{2})$/.exec(input1);
 		if(input2.length > 15){
 		alert("哎呀，你这个赌噶菜，这里的输入不能超过15个字，精简一下")
@@ -43,11 +43,11 @@
 <c:set var="now" value="<%=new java.util.Date()%>" />
 <form name="AddRecord" action="zengjia" method="post" onsubmit="return validate()">
 <br/> 时间:
-<input type="text" name="xuehao" style="color:#888;" value="<fmt:formatDate value="${now}" pattern="yyyy-MM-dd" />" required>
+<input type="text" name="DateTimes" style="color:#888;" value="<fmt:formatDate value="${now}" pattern="yyyy-MM-dd" />" required>
 <br/>物品:
-<input type="text" id="TheGoods" name="xingming" required>
+<input type="text" id="TheGoods" name="Goods" required>
 <br/>总价:
-<input type="text" name="zhuanye" required>
+<input type="text" name="Sums" required>
 <br/>
 <p id="demo" style="color:red;"></p>
 <br/> <input type="submit" name="submit" value="提交餐饮记录">  &nbsp;   <input type="submit" name="submit1" class="button" value="提交日常用品记录">
