@@ -6,7 +6,7 @@
            version="3.0">
     <servlet>
         <servlet-name>zengjia1</servlet-name>
-        <servlet-class>zengjia</servlet-class>
+        <servlet-class>web.Itemservlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>zengjia1</servlet-name>
