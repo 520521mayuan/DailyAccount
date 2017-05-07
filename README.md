@@ -13,7 +13,7 @@
 
 1.  sql extract
 2.  要买心愿单(wechat share,qq message share)
-3.  一次提交多单
+3.  一次提交多单(数据转换为json,后台用fastjson)
 4.  stetment.setstring
 5.  serverlet和controller分离
 6.  Utile变成一个javabean
