@@ -21,26 +21,20 @@ public class Itemservlet extends HttpServlet {
         String submit=request.getParameter("submit");
         String submit1=request.getParameter("submit1");
 
+        String DateTimes=request.getParameter("DateTimes");
+        String Goods=request.getParameter("Goods");
+        String Sums=request.getParameter("Sums");
+        Item item=new Item();
+        item.setDateTimes(DateTimes);
+        item.setGoods(Goods);
+        item.setSums(Sums);
+
         if(submit!=null&&submit.equals("提交餐饮记录")){
-            String DateTimes=request.getParameter("DateTimes");
-            String Goods=request.getParameter("Goods");
-            String Sums=request.getParameter("Sums");
-            Item item=new Item();
-            item.setDateTimes(DateTimes);
-            item.setGoods(Goods);
-            item.setSums(Sums);
             IsubController isubController=new SubitemController();
             isubController.subfoods(item);
             request.getRequestDispatcher("zengjia.jsp").forward(request,response);
         }
         else if(submit1!=null&&submit1.equals("提交日常用品记录")){
-            String DateTimes=request.getParameter("DateTimes");
-            String Goods=request.getParameter("Goods");
-            String Sums=request.getParameter("Sums");
-            Item item=new Item();
-            item.setDateTimes(DateTimes);
-            item.setGoods(Goods);
-            item.setSums(Sums);
             IsubController isubController=new SubitemController();
             isubController.subgoods(item);
             request.getRequestDispatcher("zengjia.jsp").forward(request,response);
