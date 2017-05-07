@@ -12,7 +12,7 @@
 # list
 
 1.  sql extract
-2.  要买心愿单
+2.  要买心愿单(wechat share,qq message share)
 3.  一次提交多单
 4.  stetment.setstring
 5.  serverlet和controller分离
