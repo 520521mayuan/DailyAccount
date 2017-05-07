@@ -1,12 +1,11 @@
 
-package Zengjia;     
+package util;
     
-public class User {     
+public class Item {
     //private Integer uid;     
     private String DateTimes;     
     private String Goods;     
-    private String Sums;     
-    private String nianji;     
+    private String Sums;
 
     public String getDateTimes(){     
         return DateTimes;     
