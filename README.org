@@ -1,4 +1,4 @@
-* TODO Todoist[3/9]
+* TODO Todoist[3/10]
 1. [X] sql extract
 2. [ ] 要买心愿单(wechat share,qq message share)
 3. [ ] 一次提交多单(数据转换为json,后台用fastjson)
