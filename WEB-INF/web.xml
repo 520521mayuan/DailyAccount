@@ -5,11 +5,20 @@
 		  http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
            version="3.0">
     <servlet>
-        <servlet-name>zengjia1</servlet-name>
+        <servlet-name>itemservlet</servlet-name>
         <servlet-class>web.Itemservlet</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>zengjia1</servlet-name>
+        <servlet-name>itemservlet</servlet-name>
         <url-pattern>/zengjia</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>Showservlet</servlet-name>
+        <servlet-class>web.Showservlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Showservlet</servlet-name>
+        <url-pattern>/listall</url-pattern>
     </servlet-mapping>
 </web-app>

@@ -19,8 +19,6 @@ public class Itemservlet extends HttpServlet {
             throws ServletException,IOException{
         request.setCharacterEncoding("UTF-8");
         String submit=request.getParameter("submit");
-        String submit1=request.getParameter("submit1");
-
         String DateTimes=request.getParameter("DateTimes");
         String Goods=request.getParameter("Goods");
         String Sums=request.getParameter("Sums");
@@ -29,15 +27,10 @@ public class Itemservlet extends HttpServlet {
         item.setGoods(Goods);
         item.setSums(Sums);
 
-        if(submit!=null&&submit.equals("提交餐饮记录")){
-            IsubController isubController=new SubitemController();
-            isubController.subfoods(item);
-            request.getRequestDispatcher("zengjia.jsp").forward(request,response);
-        }
-        else if(submit1!=null&&submit1.equals("提交日常用品记录")){
-            IsubController isubController=new SubitemController();
-            isubController.subgoods(item);
-            request.getRequestDispatcher("zengjia.jsp").forward(request,response);
-        }
+        IsubController isubController=new SubitemController();
+        isubController.subgoods(submit,item);
+        request.getRequestDispatcher("zengjia.jsp").forward(request,response);
+
+
     }
 }

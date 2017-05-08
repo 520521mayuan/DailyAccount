@@ -1,10 +1,39 @@
 
 package util;
-    
+
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
 public class Item {
     //private Integer uid;     
     private String DateTimes;     
-    private String Goods;     
+    private String Goods;
+
+    @Override
+    public String toString() {
+        return "Item{" +
+                "DateTimes='" + DateTimes + '\'' +
+                ", Goods='" + Goods + '\'' +
+                ", Sums='" + Sums + '\'' +
+                '}';
+    }
+
+    public Item(){
+
+    }
+
+    public Item(ResultSet resultSet) {
+        try {
+            this.DateTimes=resultSet.getString("times");
+            this.Goods=resultSet.getString("goods");
+            this.Sums=resultSet.getString("money");
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+    }
+
     private String Sums;
 
     public String getDateTimes(){     
