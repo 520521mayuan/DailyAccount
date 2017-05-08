@@ -11,7 +11,7 @@
 </head>
 <body bgcolor="#cc99ff">
 	<h1>增加新的条目</h1>
-	<a href="mysql-ref.jsp" target="_blank"> 本月明细 </a>
+	<a href="/listall" target="_blank"> 本月明细 </a>
 	<h2>添加新记录</h2>
 
 <script>
@@ -50,10 +50,10 @@
 <input type="text" name="Sums" required>
 <br/>
 <p id="demo" style="color:red;"></p>
-<br/> <input type="submit" name="submit" value="提交餐饮记录">  &nbsp;   <input type="submit" name="submit1" class="button" value="提交日常用品记录">
+<br/> <input type="submit" name="submit" value="提交餐饮记录">  &nbsp;
+	  <input type="submit" name="submit" class="button" value="提交日常用品记录">
 </form>
 <span >本月消费总额是(从本月1号到现在): ￥</span>
-<span style="color:blue; font-size:29"><jsp:include page="./mysql.jsp" /></span>
 <img src="graph.png" alt="every month sum(money)" style="width:300px;height:200px;">
 </body>
 </html>
