@@ -8,6 +8,7 @@ public class Item {
     //private Integer uid;     
     private String DateTimes;     
     private String Goods;
+    private String Sums;
 
     @Override
     public String toString() {
@@ -34,7 +35,6 @@ public class Item {
 
     }
 
-    private String Sums;
 
     public String getDateTimes(){     
         return DateTimes;     

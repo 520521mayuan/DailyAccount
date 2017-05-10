@@ -2,14 +2,14 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org8e048d5">1. <span class="todo TODO">TODO</span> Todoist<code>[3/10]</code></a></li>
+<li><a href="#orgd23b1c0">1. <span class="todo TODO">TODO</span> Todoist<code>[3/11]</code></a></li>
 </ul>
 </div>
 </div>
 
-<a id="org8e048d5"></a>
+<a id="orgd23b1c0"></a>
 
-# Todoist<code>[3/10]</code>
+# Todoist<code>[3/11]</code>
 
 1.  [X] sql extract
 2.  [ ] 要买心愿单(wechat share,qq message share)
@@ -21,4 +21,5 @@
 8.  [ ] Ajax jquery(jsp尖括号)
 9.  [ ] 拦截器
 10. [ ] 删、改
+11. [ ] 实时查找（有字符就查找）
 
