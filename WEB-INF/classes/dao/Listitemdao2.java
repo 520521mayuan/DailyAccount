@@ -19,7 +19,7 @@ public class Listitemdao2 {
     private ResultSet resultSet;
 
     public List<Item> litallitem2(){
-        List Itemlist=new ArrayList();
+        List<Item> Itemlist=new ArrayList<Item>();
         String sql="select * from things";
         try {
             statement=connection.prepareStatement(sql);

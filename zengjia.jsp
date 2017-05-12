@@ -11,7 +11,7 @@
 </head>
 <body bgcolor="#cc99ff">
 	<h1>增加新的条目</h1>
-	<a href="/listall" target="_blank"> 本月明细 </a>
+	<a href="./listall" target="_blank"> 本月明细 </a>
 	<h2>添加新记录</h2>
 
 <script>
