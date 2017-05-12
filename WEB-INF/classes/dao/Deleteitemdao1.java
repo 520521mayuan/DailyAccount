@@ -1,38 +1,31 @@
 package dao;
 
 import util.ConnectionFactory;
-import util.Item;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Created by Administrator on 2017/5/8.
  */
-public class Listitemdao2 {
+public class Deleteitemdao1 {
     private Connection connection= ConnectionFactory.getCurrentConnection();
     private PreparedStatement statement;
     private ResultSet resultSet;
-
-    public List<Item> litallitem2(){
-        List Itemlist=new ArrayList();
-        String sql="select * from things";
+    public Boolean deleteItem(String itemid){
+        Boolean flag=false;
+        int index=Integer.parseInt(itemid);
+        String sql="Delete from detail where Id=?";
         try {
             statement=connection.prepareStatement(sql);
-            resultSet=statement.executeQuery();
-            while (resultSet.next()){
-                Item item=new Item(resultSet);
-                Itemlist.add(item);
-            }
+            statement.setInt(1,index);
+           int i= statement.executeUpdate();
+            flag=i==1?true:false;
         } catch (SQLException e) {
             e.printStackTrace();
         }
-
-        return Itemlist;
+        return flag;
     }
-
 }

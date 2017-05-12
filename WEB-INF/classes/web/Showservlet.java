@@ -23,9 +23,8 @@ public class Showservlet extends HttpServlet {
 
     @Override
     public void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        List<Item> list=new ArrayList<>();
         IextractController iextractController=new ExtractController();
-        list=iextractController.extractfoods();
+        List<Item> list=iextractController.extractfoods();
         req.setAttribute("listall",list);
         req.getRequestDispatcher("listall.jsp").forward(req,resp);
     }

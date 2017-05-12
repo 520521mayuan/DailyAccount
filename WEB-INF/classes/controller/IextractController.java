@@ -10,4 +10,5 @@ import java.util.List;
 public interface IextractController {
     public List<Item> extractfoods();
     public List<Item> extractgoods();
+    public List<Item> mohusearch1(String keyword);
 }
