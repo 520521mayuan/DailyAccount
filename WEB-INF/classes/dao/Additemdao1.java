@@ -20,6 +20,7 @@ public class Additemdao1 {
              statement.setString(2,item.getGoods());
              statement.setString(3,item.getSums());
              int i = statement.executeUpdate();
+             System.out.println("123");
              flag = i == 1 ? true : false;
          } catch (SQLException e) {
              e.printStackTrace();
