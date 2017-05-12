@@ -13,17 +13,21 @@ import java.util.List;
 public class ExtractController implements IextractController {
     @Override
     public List<Item> extractfoods() {
-        List<Item> list=new ArrayList<>();
         Listitemdao1 listitemdao1=new Listitemdao1();
-        list=listitemdao1.litallitem1();
+        List<Item> list=listitemdao1.litallitem1();
         return list;
     }
 
     @Override
     public List<Item> extractgoods() {
-        List<Item> list=new ArrayList<>();
         Listitemdao2 listitemdao2=new Listitemdao2();
-        list=listitemdao2.litallitem2();
+        List<Item> list=listitemdao2.litallitem2();
+        return list;
+    }
+
+    public List<Item> mohusearch1(String keyword){
+        Listitemdao1 listitemdao1=new Listitemdao1();
+        List<Item> list=listitemdao1.mohuosearch1(keyword);
         return list;
     }
 }

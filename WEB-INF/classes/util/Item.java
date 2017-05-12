@@ -5,15 +5,25 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class Item {
-    //private Integer uid;     
+    //private Integer uid;
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    private String id;
     private String DateTimes;     
     private String Goods;
-    private String Sums;
 
     @Override
     public String toString() {
         return "Item{" +
-                "DateTimes='" + DateTimes + '\'' +
+                "id='" + id + '\'' +
+                ", DateTimes='" + DateTimes + '\'' +
                 ", Goods='" + Goods + '\'' +
                 ", Sums='" + Sums + '\'' +
                 '}';
@@ -28,6 +38,7 @@ public class Item {
             this.DateTimes=resultSet.getString("times");
             this.Goods=resultSet.getString("goods");
             this.Sums=resultSet.getString("money");
+            this.id=resultSet.getString("Id");
 
         } catch (SQLException e) {
             e.printStackTrace();
@@ -35,6 +46,7 @@ public class Item {
 
     }
 
+    private String Sums;
 
     public String getDateTimes(){     
         return DateTimes;     
