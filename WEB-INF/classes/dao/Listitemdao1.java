@@ -16,11 +16,17 @@ import java.util.List;
 public class Listitemdao1 {
     private Connection connection= ConnectionFactory.getCurrentConnection();
     private PreparedStatement statement;
-    private ResultSet resultSet;
+	private ResultSet resultSet;
+	// 未获取到条目数
+	// private PreparedStatement statement1;
+	// private ResultSet resultSet1;
+	// 未获取到条目数
+	private int noOfRecords;
 
-    public List<Item> litallitem1(){
+    public List<Item> litallitem1(int offset, 
+                int noOfRecords){
         List Itemlist=new ArrayList();
-        String sql="select * from detail";
+        String sql="select SQL_CALC_FOUND_ROWS * from detail limit " + offset + ", " + noOfRecords;
         try {
             statement=connection.prepareStatement(sql);
             resultSet=statement.executeQuery();
@@ -28,12 +34,22 @@ public class Listitemdao1 {
                 Item item=new Item(resultSet);
                 Itemlist.add(item);
             }
+	    // 未获取到条目数
+	    // statement1=connection.prepareStatement("SELECT FOUND_ROWS()");
+            // resultSet1=statement.executeQuery();
+            // if(resultSet1.next())
+	    // 	    this.noOfRecords = resultSet1.getInt(1);
+	    // 未获取到条目数
         } catch (SQLException e) {
             e.printStackTrace();
         }
 
         return Itemlist;
+	
     }
+	public int getNoOfRecords() {
+		return noOfRecords;
+	}
 
     public List<Item> mohuosearch1(String keyword){
         List<Item> list=new ArrayList<>();
