@@ -64,7 +64,6 @@ To change this template use File | Settings | File Templates.
 			</tr>
 		</table>
 		<%--For displaying Next link --%>
-		<c:out value="${noOfPages}" />
 		<c:if test="${currentPage lt noOfPages}">
 		<td><a href="listall?page=${currentPage + 1}">Next</a></td>
 		</c:if>

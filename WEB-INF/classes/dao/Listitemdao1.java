@@ -17,9 +17,9 @@ public class Listitemdao1 {
     private Connection connection= ConnectionFactory.getCurrentConnection();
     private PreparedStatement statement;
 	private ResultSet resultSet;
+	private int noOfRecordss;
 
-    public List<Item> litallitem1(int offset, 
-                int noOfRecords){
+    public List<Item> litallitem1(int offset, int noOfRecords){
         List Itemlist=new ArrayList();
         String sql="select SQL_CALC_FOUND_ROWS * from detail limit " + offset + ", " + noOfRecords;
         try {
@@ -29,6 +29,11 @@ public class Listitemdao1 {
                 Item item=new Item(resultSet);
                 Itemlist.add(item);
             }
+	    resultSet.close();
+	    statement=connection.prepareStatement("SELECT FOUND_ROWS()");
+	    resultSet=statement.executeQuery();
+	    if(resultSet.next())
+		    noOfRecordss = resultSet.getInt(1);
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -37,19 +42,7 @@ public class Listitemdao1 {
 	
     }
 	public int getNoOfRecords() {
-		int noOfRecords=0;
-		// 未获取到条目数
-		try{
-			statement=connection.prepareStatement("SELECT count(*) from detail");
-			resultSet=statement.executeQuery();
-			if(resultSet.next())
-				noOfRecords = resultSet.getInt(1);
-		}
-		catch (SQLException e) {
-			e.printStackTrace();
-        }
-	    // 未获取到条目数
-		return noOfRecords;
+		return noOfRecordss;
 	}
 
     public List<Item> mohuosearch1(String keyword){
