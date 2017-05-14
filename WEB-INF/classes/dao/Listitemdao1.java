@@ -17,11 +17,6 @@ public class Listitemdao1 {
     private Connection connection= ConnectionFactory.getCurrentConnection();
     private PreparedStatement statement;
 	private ResultSet resultSet;
-	// 未获取到条目数
-	// private PreparedStatement statement1;
-	// private ResultSet resultSet1;
-	// 未获取到条目数
-	private int noOfRecords;
 
     public List<Item> litallitem1(int offset, 
                 int noOfRecords){
@@ -34,12 +29,6 @@ public class Listitemdao1 {
                 Item item=new Item(resultSet);
                 Itemlist.add(item);
             }
-	    // 未获取到条目数
-	    // statement1=connection.prepareStatement("SELECT FOUND_ROWS()");
-            // resultSet1=statement.executeQuery();
-            // if(resultSet1.next())
-	    // 	    this.noOfRecords = resultSet1.getInt(1);
-	    // 未获取到条目数
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -48,6 +37,18 @@ public class Listitemdao1 {
 	
     }
 	public int getNoOfRecords() {
+		int noOfRecords=0;
+		// 未获取到条目数
+		try{
+			statement=connection.prepareStatement("SELECT count(*) from detail");
+			resultSet=statement.executeQuery();
+			if(resultSet.next())
+				noOfRecords = resultSet.getInt(1);
+		}
+		catch (SQLException e) {
+			e.printStackTrace();
+        }
+	    // 未获取到条目数
 		return noOfRecords;
 	}
 
