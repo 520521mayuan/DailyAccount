@@ -43,17 +43,17 @@ To change this template use File | Settings | File Templates.
 							<td><c:out value="${item.getDateTimes()}"/></td>
 							<td><c:out value="${item.getGoods()}" /></td>
 							<td><c:out value="${item.getSums()}" /></td>
-							<td><a href="/delete?itemID=${item.getId()}">删除</a></td>
+							<td><a href="./delete?itemID=${item.getId()}">删除</a></td>
 						</tr>
 					</c:forEach>
 					</thead>
 				</table>
 			</div>
 			<div style="width: 500px;margin:0 auto;padding-top: 15px">
-				<a href="/listall?pagenumber=1">首页</a>
-				<a href="/listall?pagenumber=${page.getPreviousNumber()}">上一页</a>
-				<a href="/listall?pagenumber=${page.getNextNumber()}">下一页</a>
-				<a href="/listall?pagenumber=${page.getPageCount()}">末页</a>
+				<a href="./listall?pagenumber=1">首页</a>
+				<a href="./listall?pagenumber=${page.getPreviousNumber()}">上一页</a>
+				<a href="./listall?pagenumber=${page.getNextNumber()}">下一页</a>
+				<a href="./listall?pagenumber=${page.getPageCount()}">末页</a>
 				当前第${page.getPagenumber()}页,总共${page.getPageCount()}页
 			</div>
 		</div>

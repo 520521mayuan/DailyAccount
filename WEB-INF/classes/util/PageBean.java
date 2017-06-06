@@ -7,7 +7,7 @@ import java.util.List;
  */
 public class PageBean {
     private Integer pagenumber;
-    private Integer pagesize=5;
+    private Integer pagesize=13;
     private Integer totalRow;
     private Integer pageCount;
     private Integer nextNumber;

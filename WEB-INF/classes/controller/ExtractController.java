@@ -31,7 +31,7 @@ public class ExtractController implements IextractController {
     }
     public PageBean mohusearch1(String keyword,Integer pagenumber){
         Listitemdao1 listitemdao1=new Listitemdao1();
-        List<Item> list=listitemdao1.mohuosearch1(keyword,pagenumber,5);
+        List<Item> list=listitemdao1.mohuosearch1(keyword,pagenumber,13);
         PageBean pageBean=new PageBean();
         pageBean.setPagenumber(pagenumber);
         pageBean.setPageData(list);
@@ -44,7 +44,7 @@ public class ExtractController implements IextractController {
 
     public PageBean pageBean(String pagenumber){
         Listitemdao1 listitemdao1=new Listitemdao1();
-        List<Item> items=listitemdao1.litallitem1(Integer.valueOf(pagenumber),5);
+        List<Item> items=listitemdao1.litallitem1(Integer.valueOf(pagenumber),13);
         PageBean pageBean=new PageBean();
         pageBean.setPagenumber(Integer.valueOf(pagenumber));
         pageBean.setPageData(items);
