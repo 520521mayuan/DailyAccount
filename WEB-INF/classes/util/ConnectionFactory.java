@@ -21,7 +21,7 @@ public class ConnectionFactory {
         if (null == connection)//如果当前线程中，没有获取到Connection
             //手动创建
             try {
-                connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/monthconsume?useUnicode=true&characterEncoding=utf8","root","sqllife");
+                connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/monthconsume?useUnicode=true&characterEncoding=utf8","root","root");
                 threadLocal.set(connection);//将Connection对象放在当前线程
             } catch (SQLException e) {
                 e.printStackTrace();

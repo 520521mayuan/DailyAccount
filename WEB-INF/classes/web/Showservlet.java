@@ -3,6 +3,7 @@ package web;
 import controller.ExtractController;
 import controller.IextractController;
 import util.Item;
+import util.PageBean;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -23,17 +24,10 @@ public class Showservlet extends HttpServlet {
 
 	@Override
 	public void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		int page = 1;
-		int recordsPerPage = 10;
-		if(req.getParameter("page") != null)
-			page = Integer.parseInt(req.getParameter("page"));
+		String pagenumberstr=req.getParameter("pagenumber")==null?"1":req.getParameter("pagenumber");
 		IextractController iextractController=new ExtractController();
-		List<Item> list=iextractController.extractfoods((page-1)*recordsPerPage,recordsPerPage);
-		int noOfRecords = iextractController.getsumpage();
-		int noOfPages = (int) Math.ceil(noOfRecords * 1.0 / recordsPerPage);
-		req.setAttribute("listall",list);
-		req.setAttribute("noOfPages", noOfPages);
-		req.setAttribute("currentPage", page);
+		PageBean pageBean=iextractController.pageBean(pagenumberstr);
+		req.setAttribute("page",pageBean);
 		req.getRequestDispatcher("listall.jsp").forward(req,resp);
 	}
 }

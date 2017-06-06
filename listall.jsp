@@ -25,47 +25,37 @@ To change this template use File | Settings | File Templates.
 				<input type="submit" value="搜索">
 			</form>
 		</div>
-		<table border="1" cellpadding="5" style="text-align: center;margin:auto;">
-			<thead>
-				<tr>
-					<td>编号</td>&nbsp;
-					<td>时间</td>&nbsp;
-					<td>商品</td>&nbsp;
-					<td>价格</td>&nbsp;
-					<td>删除</td>&nbsp;
-				</tr>
-				<thead>
-					<c:forEach var="item" items="${listall}">
+		<div>
+			<div>
+				<table border="1" cellpadding="5" style="text-align: center;margin:auto;">
+					<thead>
 					<tr>
-						<td><c:out value="${item.getId()}" /></td>
-						<td><c:out value="${item.getDateTimes()}"/></td>
-						<td><c:out value="${item.getGoods()}" /></td>
-						<td><c:out value="${item.getSums()}" /></td>
-						<td><a href="/delete?itemID=${item.getId()}">删除</a></td>
+						<td>编号</td>&nbsp;
+						<td>时间</td>&nbsp;
+						<td>商品</td>&nbsp;
+						<td>价格</td>&nbsp;
+						<td>删除</td>&nbsp;
 					</tr>
-							</c:forEach>
-		</table>
-		<c:if test="${currentPage != 1}">
-		<td><a href="listall?page=${currentPage - 1}">Previous</a></td>
-		</c:if>
-
-		<table border="1" cellpadding="5" cellspacing="5">
-			<tr>
-				<c:forEach begin="${currentPage}" end="${currentPage+5}" var="i">
-				<c:choose>
-				<c:when test="${currentPage eq i}">
-				<td>${i}</td>
-				</c:when>
-				<c:otherwise>
-				<td><a href="listall?page=${i}">${i}</a></td>
-				</c:otherwise>
-				</c:choose>
-				</c:forEach>
-			</tr>
-		</table>
-		<%--For displaying Next link --%>
-		<c:if test="${currentPage lt noOfPages}">
-		<td><a href="listall?page=${currentPage + 1}">Next</a></td>
-		</c:if>
+					<thead>
+					<c:forEach var="item" items="${page.getPageData()}">
+						<tr>
+							<td><c:out value="${item.getId()}" /></td>
+							<td><c:out value="${item.getDateTimes()}"/></td>
+							<td><c:out value="${item.getGoods()}" /></td>
+							<td><c:out value="${item.getSums()}" /></td>
+							<td><a href="/delete?itemID=${item.getId()}">删除</a></td>
+						</tr>
+					</c:forEach>
+					</thead>
+				</table>
+			</div>
+			<div style="width: 500px;margin:0 auto;padding-top: 15px">
+				<a href="/listall?pagenumber=1">首页</a>
+				<a href="/listall?pagenumber=${page.getPreviousNumber()}">上一页</a>
+				<a href="/listall?pagenumber=${page.getNextNumber()}">下一页</a>
+				<a href="/listall?pagenumber=${page.getPageCount()}">末页</a>
+				当前第${page.getPagenumber()}页,总共${page.getPageCount()}页
+			</div>
+		</div>
 	</body>
 </html>

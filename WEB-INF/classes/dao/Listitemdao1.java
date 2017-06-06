@@ -14,26 +14,32 @@ import java.util.List;
  * Created by Administrator on 2017/5/8.
  */
 public class Listitemdao1 {
+    //获取连接
     private Connection connection= ConnectionFactory.getCurrentConnection();
+    //声明statement
     private PreparedStatement statement;
+    //声明结果集
 	private ResultSet resultSet;
-	private int noOfRecordss;
 
-    public List<Item> litallitem1(int offset, int noOfRecords){
+    private int noOfRecordss;
+    public List<Item> litallitem1(int pagenumber, int pagesize){
         List Itemlist=new ArrayList();
-        String sql="select SQL_CALC_FOUND_ROWS * from detail limit " + offset + ", " + noOfRecords;
+        String sql="select SQL_CALC_FOUND_ROWS * from detail limit ?,? ";
         try {
             statement=connection.prepareStatement(sql);
+            statement.setInt(1, (pagenumber - 1) * pagesize);
+            statement.setInt(2, pagesize);
             resultSet=statement.executeQuery();
             while (resultSet.next()){
                 Item item=new Item(resultSet);
                 Itemlist.add(item);
             }
-	    resultSet.close();
-	    statement=connection.prepareStatement("SELECT FOUND_ROWS()");
-	    resultSet=statement.executeQuery();
-	    if(resultSet.next())
-		    noOfRecordss = resultSet.getInt(1);
+            resultSet.close();
+            statement= connection.prepareStatement("SELECT FOUND_ROWS()");
+            resultSet=statement.executeQuery();
+            while (resultSet.next()){
+                noOfRecordss=resultSet.getInt(1);
+            }
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -42,19 +48,27 @@ public class Listitemdao1 {
 	
     }
 	public int getNoOfRecords() {
-		return noOfRecordss;
+        return noOfRecordss;
 	}
 
-    public List<Item> mohuosearch1(String keyword){
+    public List<Item> mohuosearch1(String keyword, Integer pagenumber,Integer pagesize){
         List<Item> list=new ArrayList<>();
-        String sql="select * from detail where goods like ?";
+        String sql="select SQL_CALC_FOUND_ROWS * from detail where goods like ? limit ?,? ";
         try {
             statement=connection.prepareStatement(sql);
             statement.setString(1,"%"+keyword+"%");
+            statement.setInt(2,(pagenumber-1)*pagesize);
+            statement.setInt(3,pagesize);
             resultSet=statement.executeQuery();
             while (resultSet.next()){
                 Item item=new Item(resultSet);
                 list.add(item);
+            }
+            resultSet.close();
+            statement= connection.prepareStatement("SELECT FOUND_ROWS()");
+            resultSet=statement.executeQuery();
+            while (resultSet.next()){
+                noOfRecordss=resultSet.getInt(1);
             }
         } catch (SQLException e) {
             e.printStackTrace();
