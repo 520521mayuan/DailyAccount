@@ -12,8 +12,12 @@ To change this template use File | Settings | File Templates.
 <html>
 <head>
     <title>本月明细</title>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+	<script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script src="bootstrap/js/bootstrap.min.js"></script>
 </head>
 <body style="text-align: center;">
+    <jsp:include page="./include/header.html" />
 <h2>餐饮</h2>
 <div style="margin-bottom: 15px">
     <a href="zengjia.jsp" style="margin-left: 250px;margin-top: 70px;text-decoration: none;">返回首页</a>

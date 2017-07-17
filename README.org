@@ -10,3 +10,7 @@
 9. [ ] 拦截器
 10. [ ] 删、改
 11. [ ] 实时查找（有字符就查找）
+* include package
+1. highcharts 5.0.12 https://code.highcharts.com/zips/Highcharts-5.0.12.zip
+2. bootstrap 3.3.7 https://github.com/twbs/bootstrap/releases/download/v3.3.7/bootstrap-3.3.7-dist.zip
+
